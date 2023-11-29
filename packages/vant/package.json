@@ -1,0 +1,16 @@
+{
+  "name": "mini-vant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vant-cli dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.2.2",
+    "vue": "^3.3.9"
+  }
+}

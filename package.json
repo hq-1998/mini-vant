@@ -1,0 +1,15 @@
+{
+  "name": "mini-vant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm --dir ./packages/vant dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@mini-vant/cli": "workspace:*"
+  }
+}
