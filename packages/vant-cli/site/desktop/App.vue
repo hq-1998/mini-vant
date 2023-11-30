@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <van-doc>
+    <van-doc :simulator="simulator">
       <router-view />
     </van-doc>
   </div>
@@ -12,6 +12,11 @@ import VanDoc from "./components/index.vue";
 export default {
   components: {
     VanDoc,
+  },
+  computed: {
+    simulator() {
+      return `/mobile.html${location.hash}`;
+    },
   },
 };
 </script>

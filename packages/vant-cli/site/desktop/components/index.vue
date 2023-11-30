@@ -1,23 +1,20 @@
 <template>
   <div>
-    <doc-container>
-      <doc-content>
-        <slot />
-      </doc-content>
-    </doc-container>
+    <doc-simulator :src="simulator" />
   </div>
 </template>
 
 <script>
-import DocContainer from './Container.vue';
-import DocContent from './Content.vue';
+import DocSimulator from "./Simulator.vue";
 
 export default {
   name: "VanDoc",
+  props: {
+    simulator: String,
+  },
   components: {
-    DocContainer,
-    DocContent
-  }
+    DocSimulator,
+  },
 };
 </script>
 
