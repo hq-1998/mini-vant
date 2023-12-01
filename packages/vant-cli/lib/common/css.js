@@ -1,4 +1,4 @@
-import { getVantConfig } from "./css.js";
+import { getVantConfig } from "./constant.js";
 
 function getCssLang() {
   const vantConfig = getVantConfig();

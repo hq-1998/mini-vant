@@ -1,6 +1,7 @@
 import { readdirSync } from "node:fs";
-import { SRC_DIR, pascalize } from "../common/constant.js";
+import { SRC_DIR } from "../common/constant.js";
 import { CSS_LANG } from "../common/css.js";
+import { pascalize } from "../common/index.js";
 
 function genImports(demos) {
   return demos
@@ -40,7 +41,7 @@ function genCode(components) {
   // const ActionBar = () => import('D:/gs/vant4/packages/vant/src/action-bar/demo/index.vue')
   return `import 'package-style.${CSS_LANG}';
   ${genImports(demos)}
-  
+
   ${genExports(demos)}
   `;
 }
