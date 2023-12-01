@@ -29,3 +29,9 @@ const vantConfig = await getVantConfigAsync();
 export function getVantConfig() {
   return vantConfig;
 }
+
+function getSrcDir() {
+  return join(ROOT, 'src');
+}
+
+export const SRC_DIR = getSrcDir();
