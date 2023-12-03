@@ -18,7 +18,7 @@ function vitePluginGenVantBaseCode() {
   const resolvedMobileVirtualModuleId = `vant-cli:${virtualMobileModuleId}`;
   return {
     name: "vite-plugin(vant-cli):gen-site-base-code",
-    resolvedId(id) {
+    resolveId(id) {
       if (id === virtualMobileModuleId) {
         return resolvedMobileVirtualModuleId;
       }
@@ -38,7 +38,7 @@ export function getViteConfigForSiteDev() {
   const title = getTitle(siteConfig);
   return {
     root: SITE_SRC_DIR,
-    plugins: [vitePluginVue()],
+    plugins: [vitePluginGenVantBaseCode(), vitePluginVue()],
     server: {
       host: "0.0.0.0",
     },

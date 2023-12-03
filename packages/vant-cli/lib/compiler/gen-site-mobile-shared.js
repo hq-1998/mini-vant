@@ -1,4 +1,5 @@
-import { readdirSync } from "node:fs";
+import { join } from 'node:path';
+import { existsSync, readdirSync } from "node:fs";
 import { SRC_DIR } from "../common/constant.js";
 import { CSS_LANG } from "../common/css.js";
 import { pascalize } from "../common/index.js";
@@ -34,12 +35,13 @@ function genCode(components) {
       component,
       // action-bar -> actionBar -> ActionBar
       name: pascalize(component),
-      path: join(SRC_DIR, compoennt, "demo/index.vue"),
+      path: join(SRC_DIR, component, "demo/index.vue"),
     };
-  });
-
+  }).filter((item) => existsSync(item.path));
+  
   // const ActionBar = () => import('D:/gs/vant4/packages/vant/src/action-bar/demo/index.vue')
-  return `import 'package-style.${CSS_LANG}';
+  // import 'package-style.${CSS_LANG}';
+  return `
   ${genImports(demos)}
 
   ${genExports(demos)}
